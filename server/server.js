@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const foodArray = require('./modules/food-array');
+const foodRouter = require('./routes/food.router');
 
 const PORT = process.env.PORT || 5000;
 
@@ -10,9 +10,7 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({extended:true})); 
 app.use(express.static('server/public'));
 
-app.get('/foods', (req, res) => {
-    res.send(foodArray);
-});
+app.use('/foods', foodRouter);
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
