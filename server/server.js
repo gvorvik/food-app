@@ -21,6 +21,7 @@ mongoose.connection.on('error', (error) => {
 
 
 app.use(bodyParser.urlencoded({extended:true})); 
+app.use(bodyParser.json());
 app.use(express.static('server/public'));
 
 app.use('/foods', foodRouter);

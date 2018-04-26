@@ -30,8 +30,18 @@ app.controller('FoodAppController', [ '$http', function($http) {
     };
 
     self.addFood = function(newFood) {
-    
         console.log(newFood);
+        $http({
+            method: 'POST',
+            url: '/foods',
+            data: newFood
+        })
+        .then(function(response) {
+            console.log(response.data);
+        })
+        .catch(function(error) {
+            console.log('error on /foods', error);
+        });
     }
 
 }]);
