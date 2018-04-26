@@ -10,8 +10,9 @@
 </head>
 <body ng-app="FoodApp">
     <h1>Food App</h1>
-    <div ng-controller = "FoodAppController as vm">
+    <div ng-controller="FoodAppController as vm">
         <h2>{{vm.message}}</h2>
+        <input type="text" ng-model="vm.message">
     </div>
 </body>
 </html>
