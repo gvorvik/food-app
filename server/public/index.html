@@ -8,7 +8,10 @@
     <script src="scripts/client.js"></script>
     <title>Food App</title>
 </head>
-<body>
+<body ng-app="FoodApp">
     <h1>Food App</h1>
+    <div ng-controller = "FoodAppController as vm">
+        <h2>{{vm.message}}</h2>
+    </div>
 </body>
 </html>
