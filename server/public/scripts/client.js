@@ -11,6 +11,7 @@ app.controller('FoodAppController', [ '$http', function($http) {
     var self = this;
     self.message = "Hello World";
 
+    //sample $http request
     $http({
         method: 'GET',
         url: '/foods'
@@ -21,5 +22,16 @@ app.controller('FoodAppController', [ '$http', function($http) {
     .catch(function(error) {
         console.log('error on /foods', error);
     });
+
+    self.newFood = {
+        name: '',
+        deliciousness_rating: '',
+        is_hot: ''
+    };
+
+    self.addFood = function(newFood) {
+    
+        console.log(newFood);
+    }
 
 }]);

@@ -12,6 +12,19 @@ router.get('/', (req, res) => {
             res.sendStatus(500);
             console.log('uh oh', error);
         });
+
+    router.post('/', (req, res) => {
+        const foodAdd = req.body;
+        console.log(foodAdd);
+        Food.create(foodAdd)
+            .then((data) => {
+                res.sendStatus(200);
+            })
+            .catch((error) => {
+                console.log('error', error);
+                res.sendStatus(500);
+            });
+    });
 });
 
 module.exports = router;

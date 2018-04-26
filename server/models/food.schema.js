@@ -7,4 +7,4 @@ const foodSchema = new Schema({
     is_hot: {type: Boolean, required: true}
 });
 
-module.exports = mongoose.model('foods', foodSchema);
+module.exports = mongoose.model('food', foodSchema);
